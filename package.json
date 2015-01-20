@@ -1,0 +1,23 @@
+{
+  "name": "requirize",
+  "version": "0.1.0",
+  "description": "Require a directory and construct a hash representing the required files. Keys are filenames minus the file extension and the respective values are the exported object.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:coen-hyde/requirize.git"
+  },
+  "author": "Coen Hyde",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coen-hyde/requirize/issues"
+  },
+  "homepage": "https://github.com/coen-hyde/requirize",
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^2.1.0"
+  }
+}
