@@ -10,6 +10,7 @@ dir
 - cat.js
 - dog.js
 - fish.js
+- long-filename.js
 - index.js
 - zebra.js
 ```
@@ -20,12 +21,13 @@ And we use requirize in index.js like:
 module.exports = require('requirize')(__dirname);
 ```
 
-When requiring this directory we will be return an object like
+When requiring this directory we will be return an object like. Filenames are camelized.
 
 ```js
 {
   "cat": <<module contents>>,
   "dog": <<module contents>>,
   "fish": <<module contents>>,
+  "longFilename": <<module contents>>,
   "zebra": <<module contents>>
 }
