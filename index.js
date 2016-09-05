@@ -1,4 +1,5 @@
 var fs = require('fs');
+var camelize = require("underscore.string/camelize");
 
 module.exports = function(dir) {
   var requires = [];
@@ -6,7 +7,7 @@ module.exports = function(dir) {
   fs.readdirSync(dir).forEach(function (file) {
     if (['.', '..', 'index.js'].indexOf(file) > -1) return;
 
-    var name = file.split('.').slice(0,-1).join('.');
+    var name = camelize(file.split('.').slice(0,-1).join('.'));
     requires[name] = require(dir+'/'+file);
   });
 
