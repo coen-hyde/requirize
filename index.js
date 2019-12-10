@@ -1,5 +1,6 @@
-var fs = require('fs');
-var strings = require("underscore.string");
+const fs = require('fs');
+const path = require('path');
+const strings = require("underscore.string");
 
 module.exports = function(dir, mode) {
   var requires = {};
@@ -10,16 +11,15 @@ module.exports = function(dir, mode) {
 
   fs.readdirSync(dir).forEach(function (file) {
     if (['.', '..', 'index.js'].indexOf(file) > -1) return;
-
-    var name = file.split('.').slice(0,-1).join('.');
+    let fileInfo = path.parse(file);
 
     switch (mode) {
       case 'classify':
-        name = strings.classify(name);
+        name = strings.classify(fileInfo.name);
         break;
 
       default:
-        name = strings.camelize(name);
+        name = strings.camelize(fileInfo.name);
         break;
     }
 
